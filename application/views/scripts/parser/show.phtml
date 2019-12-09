@@ -1,0 +1,67 @@
+
+<br /><br />
+<div id="view-content">
+<?php
+
+$this->title = "История парсинга";
+$this->headTitle($this->title);
+?>
+<div id = "getStateList">
+    <table class="table table-success">
+        <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Доменное имя</th>
+            <th scope="col">Ключевое слово</th>
+            <th scope="col">Позиция в Google</th>
+            <th scope="col">Дата выборки</th>
+        </tr>
+        </thead>
+        <tbody id = "getStateList">
+        <?php
+        if (count($this->paginator)){
+        // Создаём patrialLoop, передав массив фильмов, полученных от контроллера
+        echo $this->partialLoop('partials/parser.phtml', $this->paginator);
+        }
+    ?>
+        </tbody>
+    </table>
+
+    <?= $this->paginationControl($this->paginator, 'Sliding', '/my_pagination.phtml'); ?>
+
+</div>
+
+    <script>
+
+        jQuery(document).ready(function(){
+
+            $('.paginationControl a').unbind('click');
+            $('.paginationControl a').click(function(event){
+
+                event.preventDefault();
+                var url = jQuery(this).attr('href');
+
+               getStateList(url);
+
+            });
+        });
+
+        function getStateList(url){
+
+            jQuery.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'html',
+                data: {"page = <? $this->page ?>"},
+                success: function(data){
+                    $('#getStateList').html(data);
+                    $('#pageNo').val('<?php echo $this->page; ?>');
+                    $('#domain').val('<?php echo $this->domain; ?>');
+                    $('#word').val('<?php echo $this->word; ?>');
+                    $('#position').val('<?php echo $this->position; ?>');
+                    $('#date').val('<?php echo $this->date; ?>');
+                }
+            });
+        }
+
+    </script>

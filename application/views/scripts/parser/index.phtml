@@ -1,0 +1,23 @@
+<br /><br />
+
+<div id="view-content">
+    <?php
+    $this->title = "Выборка результатов из Google";
+    $this->headTitle($this->title);
+    ?>
+</div>
+
+    <?php if ($this->data['comment']):?>
+    <div id = "myalert" class="alert alert-success" role="alert">
+        <?php echo $this->data['comment']?>
+    </div>
+    <?php endif;?>
+
+    <div class="alert alert-secondary" role="alert">
+        <h2>Введите домен и ключевое слово</h2>
+    </div>
+
+    <div class="d-flex bd-highlight">
+    <?php    echo $this->data['form']; ?>
+    </div>
+
