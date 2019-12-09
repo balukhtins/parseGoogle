@@ -1,30 +1,22 @@
 
 <?php
-
     $this->headTitle()->setSeparator(' - ');
-
     $this->headTitle('Тестовое задание');
-
     // Выводим doctype, который считывается из application.ini
     echo $this->doctype();
 ?>
-
 <!doctype html>
-
 <head>
     <?php
          //echo $this->headMeta();
     ?>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <?php
         // Выводим заголовок сайта
         echo $this->headTitle();
     ?>
     <?php
-
         echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/site.css');
     ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -41,7 +33,6 @@
         ?>
     </h1>
     </div>
-
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" href="<?php echo $this->url(array('controller'=>'parser','action'=>'index'));?>">Главная</a>
@@ -53,11 +44,11 @@
             <a class="nav-link" href="#">Настройка парсинга</a>
         </li>
     </ul>
-
-    <?php
+   <div class = "content">
+        <?php
             echo $this->layout()->content;
         ?>
-</div>
+    </div>
 </body>
 </html>
 

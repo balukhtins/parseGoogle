@@ -2,15 +2,10 @@
 
 class Application_Form_Parser extends Zend_Form
 {
-
     public function init()
     {
         $this -> setMethod ( 'post' )
               ->setAction('/parser/index');
-
-        // $isEmptyMessage = 'Значение является обязательным и не может быть пустым';
-        // Задаём имя форме
-        //$this->setName('parser');
 
         // Add an domain element
         $this->addElement('text', 'domain', array(
@@ -40,8 +35,5 @@ class Application_Form_Parser extends Zend_Form
          $this->addElement('hash', 'csrf'/*, array(
              'ignore' => true,
          )*/);
-
     }
-
 }
-

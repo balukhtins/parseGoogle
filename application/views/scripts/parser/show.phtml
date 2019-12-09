@@ -1,10 +1,7 @@
-
-<br /><br />
 <div id="view-content">
 <?php
-
-$this->title = "История парсинга";
-$this->headTitle($this->title);
+    $this->title = "История парсинга";
+    $this->headTitle($this->title);
 ?>
 <div id = "getStateList">
     <table class="table table-success">
@@ -18,36 +15,27 @@ $this->headTitle($this->title);
         </tr>
         </thead>
         <tbody id = "getStateList">
-        <?php
-        if (count($this->paginator)){
-        // Создаём patrialLoop, передав массив фильмов, полученных от контроллера
-        echo $this->partialLoop('partials/parser.phtml', $this->paginator);
-        }
-    ?>
+            <?php
+                if (count($this->paginator)){
+                    // Создаём patrialLoop, передав массив фильмов, полученных от контроллера
+                    echo $this->partialLoop('partials/parser.phtml', $this->paginator);
+                }
+            ?>
         </tbody>
     </table>
-
-    <?= $this->paginationControl($this->paginator, 'Sliding', '/my_pagination.phtml'); ?>
-
+    <?= $this->paginationControl($this->paginator, 'Sliding', 'partials/my_pagination.phtml'); ?>
 </div>
-
-    <script>
-
-        jQuery(document).ready(function(){
-
+</div>
+<script>
+     jQuery(document).ready(function(){
             $('.paginationControl a').unbind('click');
             $('.paginationControl a').click(function(event){
-
                 event.preventDefault();
                 var url = jQuery(this).attr('href');
-
-               getStateList(url);
-
+                getStateList(url);
             });
-        });
-
-        function getStateList(url){
-
+     });
+     function getStateList(url){
             jQuery.ajax({
                 url: url,
                 type: 'GET',
@@ -62,6 +50,5 @@ $this->headTitle($this->title);
                     $('#date').val('<?php echo $this->date; ?>');
                 }
             });
-        }
-
-    </script>
+     }
+</script>
