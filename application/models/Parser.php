@@ -6,7 +6,6 @@ class Application_Model_Parser
     protected $_domain;
     protected $_word;
     protected $_position;
-    protected $_date;
 
     public function __construct(array $options = null)
     {
@@ -18,15 +17,16 @@ class Application_Model_Parser
     public function __set($name, $value)
     {
         $method = 'set' . $name;
-        if (('mapper' == $name) || !method_exists($this, $method)) {
+        if (!method_exists($this, $method)) {
             throw new Exception('Invalid parser property');
         }
         $this->$method($value);
     }
+
     public function __get($name)
     {
         $method = 'get' . $name;
-        if (('mapper' == $name) || !method_exists($this, $method)) {
+        if (!method_exists($this, $method)) {
             throw new Exception('Invalid parser property');
         }
         return $this->$method();
@@ -84,10 +84,5 @@ class Application_Model_Parser
     public function getId()
     {
         return $this->_id;
-    }
-
-    public function getDate()
-    {
-        return $this->_date;
     }
 }

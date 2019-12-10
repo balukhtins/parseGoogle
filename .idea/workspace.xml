@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e6104c01-4dc4-4ffa-a9dd-2f5fa8094a01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/scripts/partials/my_pagination.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/partials/my_pagination.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/ParserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ParserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/ParserShow.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ParserShow.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575445405754</updated>
       <workItem from="1575445407542" duration="14593000" />
-      <workItem from="1575460959306" duration="107174000" />
+      <workItem from="1575460959306" duration="115944000" />
     </task>
     <servers />
   </component>
@@ -123,21 +127,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1575629358029" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/application/models/Parser.php</url>
-          <line>20</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/application/models/Parser.php</url>
-          <line>28</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

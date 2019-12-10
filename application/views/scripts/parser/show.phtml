@@ -39,9 +39,10 @@
             jQuery.ajax({
                 url: url,
                 type: 'GET',
-                dataType: 'html',
-                data: {"page = <? $this->page ?>"},
+                dataType: 'format=json',
+                data: {},
                 success: function(data){
+                    alert ('dsafsdfasdf');
                     $('#getStateList').html(data);
                     $('#pageNo').val('<?php echo $this->page; ?>');
                     $('#domain').val('<?php echo $this->domain; ?>');

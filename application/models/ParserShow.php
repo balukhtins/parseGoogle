@@ -35,19 +35,28 @@ class Application_Model_ParserShow
         $this->getDbTable()->insert($data);
     }
 
-   /* public function find($id, Application_Model_Parser $parser)
+      public function getPaginatorRows ($pageNumber, $itemCountPerPage, $desc)
     {
-        $result = $this->getDbTable()->find($id);
-        if (0 == count($result)) {
-            return;
-        }
-        $row = $result->current();
-        $parser->setId($row->id)
-            ->setDomain($row->domain)
-            ->setWord($row->word)
-            ->setPosition($row->position)
-            ->setDate($row->date);
-    }*/
+        $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbSelect($this->getDbTable()->select()->order(array('id '.$desc))));
+        $paginator->setCurrentPageNumber($pageNumber);
+        $paginator->setItemCountPerPage($itemCountPerPage);
+        $paginator->setPageRange(1);
+        return $paginator;
+    }
+
+    /* public function find($id, Application_Model_Parser $parser)
+   {
+       $result = $this->getDbTable()->find($id);
+       if (0 == count($result)) {
+           return;
+       }
+       $row = $result->current();
+       $parser->setId($row->id)
+           ->setDomain($row->domain)
+           ->setWord($row->word)
+           ->setPosition($row->position)
+           ->setDate($row->date);
+   }*/
 
     /*public function fetchAll()
     {
@@ -64,14 +73,4 @@ class Application_Model_ParserShow
         }
         return $entries;
     }*/
-
-    public function getPaginatorRows ($pageNumber, $itemCountPerPage, $desc)
-    {
-        $paginator = new Zend_Paginator(new Zend_Paginator_Adapter_DbSelect($this->getDbTable()->select()->order(array('id '.$desc))));
-        $paginator->setCurrentPageNumber($pageNumber);
-        $paginator->setItemCountPerPage($itemCountPerPage);
-        $paginator->setPageRange(1);
-        return $paginator;
-    }
 }
-

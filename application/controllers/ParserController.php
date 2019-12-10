@@ -9,6 +9,8 @@ class ParserController extends Zend_Controller_Action
         Zend_Loader::loadClass('Zend_Paginator_Adapter_array');
         Zend_Loader::loadClass('Zend_View_Helper_PaginationControl');
         Zend_Loader::loadClass('Zend_Loader_Autoloader_Resource');
+        $contextSwitch = $this->_helper->contextSwitch;
+        $contextSwitch->addActionContext('show', 'json')->initContext();
     }
     public function indexAction()
     {
@@ -39,11 +41,24 @@ class ParserController extends Zend_Controller_Action
     }
     public function showAction()
     {
+        $request = $this->getRequest();
+
+
         $desc = 'DESC';
         $itemCountPerPage = 10;
         $paginator = new Application_Model_ParserShow();
-        $this->view->paginator = $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
-   }
+       // $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
+
+        if (!$request->isXmlHttpRequest()){
+        $result = array();
+        foreach($paginator as $res){
+            $result[] = $res;
+        }
+        }
+
+            $this->view->paginator =  $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
+
+    }
 }
 
 
