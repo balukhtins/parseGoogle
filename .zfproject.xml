@@ -29,6 +29,8 @@
         <dbTableDirectory>
           <dbTableFile dbTableName="Parser"/>
         </dbTableDirectory>
+        <modelFile modelName="ParserShow"/>
+        <modelFile modelName="Parser"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>

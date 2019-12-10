@@ -23,11 +23,15 @@ class ParserController extends Zend_Controller_Action
                   unset($post['csrf']);
                   $parser = $pars->parser($post);
                       if (!isset($parser)){
-                         $parser='Not found';
+                         $parser=-1;
                       }
                   $post['position'] = $parser;
-                  $add = new Application_Model_DbTable_Parser();
-                  $add->setParser($post);
+                  $save = new Application_Model_Parser($post);
+                  $add = new Application_Model_ParserShow();
+                  $add->save($save);
+                    if ($parser == -1){
+                        $parser='Not Found';
+                    }
                   $data ['comment'] = 'Домен "'. $post['domain'] . '" по ключевому слову "' . $post['word'] . '" находится на ' . $post['position'] . ' позиции в выдаче Google';
             }
         }
@@ -37,7 +41,7 @@ class ParserController extends Zend_Controller_Action
     {
         $desc = 'DESC';
         $itemCountPerPage = 10;
-        $paginator = new Application_Model_DbTable_Parser();
+        $paginator = new Application_Model_ParserShow();
         $this->view->paginator = $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
    }
 }

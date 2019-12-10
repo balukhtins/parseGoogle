@@ -1,0 +1,9 @@
+                          An Error Has Occurred                         
+ The config already has a db resource configured in section production. 
+
+Zend Framework Command Line Console Tool v1.12.19
+Details for action "Configure" and provider "DbAdapter"
+  DbAdapter
+    zf configure db-adapter dsn section-name[=production]
+
+
