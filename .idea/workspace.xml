@@ -4,9 +4,6 @@
     <list default="true" id="e6104c01-4dc4-4ffa-a9dd-2f5fa8094a01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/ParserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ParserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/ParserShow.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ParserShow.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575445405754</updated>
       <workItem from="1575445407542" duration="14593000" />
-      <workItem from="1575460959306" duration="115944000" />
+      <workItem from="1575460959306" duration="131676000" />
     </task>
     <servers />
   </component>

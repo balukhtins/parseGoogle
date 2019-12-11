@@ -3,7 +3,7 @@
     $this->title = "История парсинга";
     $this->headTitle($this->title);
 ?>
-<div id = "getStateList">
+<div id = "getStateList" class="getStateList">
     <table class="table table-success">
         <thead>
         <tr>
@@ -14,7 +14,7 @@
             <th scope="col">Дата выборки</th>
         </tr>
         </thead>
-        <tbody id = "getStateList">
+        <tbody >
             <?php
                 if (count($this->paginator)){
                     // Создаём patrialLoop, передав массив фильмов, полученных от контроллера
@@ -26,6 +26,7 @@
     <?= $this->paginationControl($this->paginator, 'Sliding', 'partials/my_pagination.phtml'); ?>
 </div>
 </div>
+<div id = "res"></div>
 <script>
      jQuery(document).ready(function(){
             $('.paginationControl a').unbind('click');
@@ -39,16 +40,10 @@
             jQuery.ajax({
                 url: url,
                 type: 'GET',
-                dataType: 'format=json',
+                dataType: 'html',
                 data: {},
                 success: function(data){
-                    alert ('dsafsdfasdf');
                     $('#getStateList').html(data);
-                    $('#pageNo').val('<?php echo $this->page; ?>');
-                    $('#domain').val('<?php echo $this->domain; ?>');
-                    $('#word').val('<?php echo $this->word; ?>');
-                    $('#position').val('<?php echo $this->position; ?>');
-                    $('#date').val('<?php echo $this->date; ?>');
                 }
             });
      }

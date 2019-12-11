@@ -42,22 +42,16 @@ class ParserController extends Zend_Controller_Action
     public function showAction()
     {
         $request = $this->getRequest();
-
-
         $desc = 'DESC';
         $itemCountPerPage = 10;
         $paginator = new Application_Model_ParserShow();
-       // $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
 
-        if (!$request->isXmlHttpRequest()){
-        $result = array();
-        foreach($paginator as $res){
-            $result[] = $res;
-        }
+        if ($request->isXmlHttpRequest()){
+            $layout = $this -> _helper-> layout( ) ;
+            $layout -> disableLayout( ) ;
         }
 
-            $this->view->paginator =  $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
-
+      $this->view->paginator =  $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
     }
 }
 
