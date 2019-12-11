@@ -12,6 +12,7 @@
             <th scope="col">Ключевое слово</th>
             <th scope="col">Позиция в Google</th>
             <th scope="col">Дата выборки</th>
+            <th scope="col">Управление</th>
         </tr>
         </thead>
         <tbody >
@@ -26,7 +27,7 @@
     <?= $this->paginationControl($this->paginator, 'Sliding', 'partials/my_pagination.phtml'); ?>
 </div>
 </div>
-<div id = "res"></div>
+
 <script>
      jQuery(document).ready(function(){
             $('.paginationControl a').unbind('click');
@@ -48,4 +49,3 @@
             });
      }
 </script>
-

@@ -39,21 +39,36 @@ class ParserController extends Zend_Controller_Action
         }
         $this->view->data = $data;
     }
+
     public function showAction()
     {
+        $form = new Application_Form_Delete();
         $request = $this->getRequest();
         $desc = 'DESC';
         $itemCountPerPage = 10;
         $paginator = new Application_Model_ParserShow();
-
+        $data['paginator'] = $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
         if ($request->isXmlHttpRequest()){
             $layout = $this -> _helper-> layout( ) ;
             $layout -> disableLayout( ) ;
         }
+        $this->view->paginator =  $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
+    }
 
-      $this->view->paginator =  $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
+    public function deleteAction()
+    {
+        $request = $this->getRequest();
+        if ($this->getRequest()->isPost()) {
+            $id = $this->getRequest()->getPost('id');
+            $delete = new Application_Model_Parser( $id);
+            $del = new Application_Model_ParserShow();
+            $del->delete($id);
+
+        }
+        $this->_helper->redirector('show');
+
+        /*$this->_redirector->setExit(false)
+            ->setGotoSimple("show-action",
+                "parser-controller");*/
     }
 }
-
-
-

@@ -1,8 +1,16 @@
 
+<?php echo $this->form; ?>
 <tr>
     <th scope="row" class="id"><?php echo $this->escape($this->id);?></th>
     <td class="domain"><?php echo $this->escape($this->domain);?></td>
     <td class="word"><?php echo $this->escape($this->word);?></td>
     <td class="position"><?php echo $this->escape($this->position);?></td>
     <td class="date"><?php echo $this->escape($this->date);?></td>
+    <td ><form id="form_button" method="post" action="<?php echo $this->url(array('controller'=>'parser','action'=>'delete'));?>">
+            <imput id="id" type="hidden" name="id" value="<?php echo $this->escape($this->id);?>">
+            <input type="hidden" name="csrf" value="" id="csrf">
+            <button type="submit" class="btn btn-danger" name="del">Submit</button>
+        </form>
+    </td>
 </tr>
+

@@ -44,19 +44,14 @@ class Application_Model_ParserShow
         return $paginator;
     }
 
-    /* public function find($id, Application_Model_Parser $parser)
+     public function delete($id, Application_Model_Parser $parser)
    {
-       $result = $this->getDbTable()->find($id);
+       $data = $parser->getId();
+       $result = $this->getDbTable()->delete($data);
        if (0 == count($result)) {
            return;
        }
-       $row = $result->current();
-       $parser->setId($row->id)
-           ->setDomain($row->domain)
-           ->setWord($row->word)
-           ->setPosition($row->position)
-           ->setDate($row->date);
-   }*/
+   }
 
     /*public function fetchAll()
     {

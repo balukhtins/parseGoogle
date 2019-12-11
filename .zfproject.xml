@@ -19,6 +19,7 @@
       <formsDirectory>
         <formFile formName="Parse"/>
         <formFile formName="Parser"/>
+        <formFile formName="Delete"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
