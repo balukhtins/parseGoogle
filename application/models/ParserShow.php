@@ -44,12 +44,12 @@ class Application_Model_ParserShow
         return $paginator;
     }
 
-     public function delete($id, Application_Model_Parser $parser)
+     public function delete(Application_Model_Parser $parser)
    {
-       $data = $parser->getId();
+       $data = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $parser->getId());
        $result = $this->getDbTable()->delete($data);
-       if (0 == count($result)) {
-           return;
+     if (0 == count($result)) {
+           return ;
        }
    }
 

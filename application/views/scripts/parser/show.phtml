@@ -12,7 +12,7 @@
             <th scope="col">Ключевое слово</th>
             <th scope="col">Позиция в Google</th>
             <th scope="col">Дата выборки</th>
-            <th scope="col">Управление</th>
+            <th scope="col">Удаление</th>
         </tr>
         </thead>
         <tbody >
@@ -28,24 +28,40 @@
 </div>
 </div>
 
+
 <script>
-     jQuery(document).ready(function(){
-            $('.paginationControl a').unbind('click');
+    jQuery(document).ready(function(){
+        if ($('form').click()){
+            $('form').click(function(event){
+                event.preventDefault();
+                var url = $(this).attr('action');
+                var id = $(this).attr('value');
+                var page = $('.page').html();
+                //alert(url+':'+id+':'+page);
+                getStateList(url, id, page);
+            });
+        }
+        if($('.paginationControl a').click()){
             $('.paginationControl a').click(function(event){
                 event.preventDefault();
                 var url = jQuery(this).attr('href');
+                var page = $('.page').html();
                 getStateList(url);
             });
-     });
-     function getStateList(url){
-            jQuery.ajax({
-                url: url,
-                type: 'GET',
-                dataType: 'html',
-                data: {},
-                success: function(data){
-                    $('#getStateList').html(data);
-                }
-            });
-     }
+        }
+    });
+    function getStateList(url, id=0, page){
+        jQuery.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'html',
+            data: {
+                id : id,
+                page : page
+            },
+            success: function(data){
+                $('#getStateList').html(data);
+            }
+        });
+    }
 </script>

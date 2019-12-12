@@ -14,7 +14,7 @@ class Application_Form_Parser extends Zend_Form
             'required'   => true,
             'filters'    => array('StringTrim'),
             'validators' => array(
-                'Hostname',
+                'Hostname','NotEmpty'
             )
         ));
 

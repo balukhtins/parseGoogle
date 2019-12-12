@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e6104c01-4dc4-4ffa-a9dd-2f5fa8094a01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.zfproject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.zfproject.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/ParserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ParserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/forms/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/forms/Parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Pars.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/ParserShow.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ParserShow.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/scripts/partials/my_pagination.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/partials/my_pagination.phtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/scripts/partials/parser.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/partials/parser.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/CSS/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/CSS/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library/Zend/Db/Table/Abstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/Zend/Db/Table/Abstract.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1575445405754</updated>
       <workItem from="1575445407542" duration="14593000" />
-      <workItem from="1575460959306" duration="146673000" />
+      <workItem from="1575460959306" duration="171606000" />
     </task>
     <servers />
   </component>

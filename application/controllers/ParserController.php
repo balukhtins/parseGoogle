@@ -32,7 +32,7 @@ class ParserController extends Zend_Controller_Action
                   $add = new Application_Model_ParserShow();
                   $add->save($save);
                     if ($parser == -1){
-                        $parser='Not Found';
+                        $post['position']='Not Found';
                     }
                   $data ['comment'] = 'Домен "'. $post['domain'] . '" по ключевому слову "' . $post['word'] . '" находится на ' . $post['position'] . ' позиции в выдаче Google';
             }
@@ -42,33 +42,31 @@ class ParserController extends Zend_Controller_Action
 
     public function showAction()
     {
-        $form = new Application_Form_Delete();
         $request = $this->getRequest();
-        $desc = 'DESC';
-        $itemCountPerPage = 10;
-        $paginator = new Application_Model_ParserShow();
-        $data['paginator'] = $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
         if ($request->isXmlHttpRequest()){
+            if( $this->getRequest()->getPost('id')){
+            $id = $this->getRequest()->getPost('id');
+            $page = $this->getRequest()->getPost('page');
+            $this->deleteAction($id, $page);
+            }
+
             $layout = $this -> _helper-> layout( ) ;
             $layout -> disableLayout( ) ;
         }
+        $desc = 'DESC';
+        $itemCountPerPage = 10;
+        $paginator = new Application_Model_ParserShow();
+
         $this->view->paginator =  $paginator->getPaginatorRows((int) $this->getRequest()->getParam('page', 1),$itemCountPerPage,$desc);
     }
 
-    public function deleteAction()
+    public function deleteAction($id, $page)
     {
-        $request = $this->getRequest();
-        if ($this->getRequest()->isPost()) {
-            $id = $this->getRequest()->getPost('id');
-            $delete = new Application_Model_Parser( $id);
-            $del = new Application_Model_ParserShow();
-            $del->delete($id);
+        $param['id'] = $id;
+        $delete = new Application_Model_Parser( $param);
+        $del = new Application_Model_ParserShow();
+        $del->delete($delete);
 
-        }
-        $this->_helper->redirector('show');
-
-        /*$this->_redirector->setExit(false)
-            ->setGotoSimple("show-action",
-                "parser-controller");*/
+       $this->_helper->redirector->gotoUrl('parser/show/page/'.$page);
     }
 }
