@@ -6,7 +6,7 @@ class Application_Form_Parser extends Zend_Form
     {
         $this -> setMethod ( 'post' )
               ->setAction('/parser/index')
-            ->setAttrib('id', 'form_parser');;
+            ->setAttrib('id', 'form_parser');
 
         // Add an domain element
         $this->addElement('text', 'domain', array(

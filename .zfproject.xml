@@ -15,11 +15,17 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="pars"/>
         </controllerFile>
+        <controllerFile controllerName="Auth">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="login"/>
+          <actionMethod actionName="logout"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory>
         <formFile formName="Parse"/>
         <formFile formName="Parser"/>
         <formFile formName="Delete"/>
+        <formFile formName="Login"/>
       </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
@@ -32,6 +38,7 @@
         </dbTableDirectory>
         <modelFile modelName="ParserShow"/>
         <modelFile modelName="Parser"/>
+        <modelFile modelName="User"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -48,6 +55,15 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Pars">
             <viewScriptFile forActionName="pars"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Auth">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Auth">
+            <viewScriptFile forActionName="login"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Auth">
+            <viewScriptFile forActionName="logout"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

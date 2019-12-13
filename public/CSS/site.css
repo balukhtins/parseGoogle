@@ -64,6 +64,6 @@ form #submitbutton {
 }
 
 #form_button{
-    align-content: center;
-
+    background-color: unset;
+    margin: auto;
 }
