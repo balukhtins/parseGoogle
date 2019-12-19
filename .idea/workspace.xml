@@ -4,13 +4,7 @@
     <list default="true" id="e6104c01-4dc4-4ffa-a9dd-2f5fa8094a01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/ParserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ParserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/forms/Parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/forms/Parser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/layouts/scripts/layout.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/ParserShow.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/ParserShow.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/parser/show.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/scripts/partials/my_pagination.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/partials/my_pagination.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/scripts/partials/parser.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/scripts/partials/parser.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/Zend/Db/Table/Abstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/library/Zend/Db/Table/Abstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/CSS/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/CSS/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,12 +61,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MySQL - dbparser@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>

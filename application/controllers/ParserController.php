@@ -68,5 +68,6 @@ class ParserController extends Zend_Controller_Action
         $del->delete($delete);
 
        $this->_helper->redirector->gotoUrl('parser/show/page/'.$page);
+        //$this->_forward('show', null, null, array('page'=>$page));
     }
 }
